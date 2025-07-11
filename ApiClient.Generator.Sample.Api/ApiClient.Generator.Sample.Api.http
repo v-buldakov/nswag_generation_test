@@ -1,0 +1,6 @@
+@ApiClient.Generator.Sample.Api_HostAddress = http://localhost:5086
+
+GET {{ApiClient.Generator.Sample.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
