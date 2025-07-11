@@ -1,9 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj" />
+  </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="NSwag.MSBuild" Version="14.4.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Update="content\nswag.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <Target Name="NSwag" BeforeTargets="AfterBuild" Condition="'$(GenerateApiClient)'!='False' ">
+        <PropertyGroup>
+            <NSwagPath>content/nswag.json</NSwagPath>
+        </PropertyGroup>
+        <Exec Command="$(NSwagExe_Net80) run $(NSwagPath) /variables:Configuration=$(Configuration)" />
+    </Target>
+    
 </Project>
