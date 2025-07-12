@@ -1,0 +1,19 @@
+name: .NET
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: action/checkout@v4
+    - name: Setup .NET
+      uses: action/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: build
+      run: dotnet build --configuration Release

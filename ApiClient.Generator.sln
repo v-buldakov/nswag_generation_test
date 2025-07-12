@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient.Generator.Sample.Contracts", "ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj", "{EBED3DF1-3126-4CC6-A2F0-B021C00820FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient.Generator.Sample.Client", "ApiClient.Generator.Sample.Client\ApiClient.Generator.Sample.Client.csproj", "{0D0806D7-9E60-696F-A558-58E8149E1C59}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5} = {AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
