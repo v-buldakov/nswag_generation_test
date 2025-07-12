@@ -17,5 +17,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: build api project in debug mode
       run: dotnet build ./ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj --configuration Debug
+    - name: create build dir
+      run: mkdir ./builds
     - name: build
-      run: dotnet build --configuration Release
+      run: dotnet build --configuration Release --artifacts-path ./builds

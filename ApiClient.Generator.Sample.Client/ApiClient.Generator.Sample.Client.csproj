@@ -27,7 +27,7 @@
         <PropertyGroup>
             <NSwagPath>content/nswag.json</NSwagPath>
         </PropertyGroup>
-        <Exec Command="$(NSwagExe_Net80) run $(NSwagPath)" />
+        <Exec Command="$(NSwagExe_Net80) run $(NSwagPath) /variables:Configuration=$(Configuration)" />
     </Target>
     
 </Project>
