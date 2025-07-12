@@ -14,7 +14,7 @@
       "verbose": true,
       "workingDirectory": null,
       "aspNetCoreEnvironment": null,
-      "output": null,
+      "output": "../apiBinary",
       "newLineBehavior": "Auto"
     }
   },
