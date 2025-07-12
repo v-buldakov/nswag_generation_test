@@ -18,6 +18,6 @@ jobs:
     - name: create build dir
       run: mkdir ./builds
     - name: build api project in debug mode
-      run: dotnet build ./ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj --configuration Debug --artifacts-path ./builds
+      run: dotnet build ./ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj --configuration Debug
     - name: build
       run: dotnet build --configuration Release --artifacts-path ./builds
