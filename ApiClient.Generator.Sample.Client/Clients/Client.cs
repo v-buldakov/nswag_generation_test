@@ -35,7 +35,7 @@ namespace ApiClient.Generator.Sample.Client.Clients
         private System.Text.Json.JsonSerializerOptions _instanceSettings;
 
     #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        public Client(System.Net.Http.HttpClient httpClient)
+        public Client(ApiHttpConfiguration configuration, System.Net.Http.HttpClient httpClient) : base(configuration)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _httpClient = httpClient;
