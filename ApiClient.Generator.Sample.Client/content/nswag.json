@@ -100,7 +100,7 @@
       "generateBaseUrlProperty": true,
       "generateSyncMethods": false,
       "generatePrepareRequestAndProcessResponseAsAsyncMethods": false,
-      "exposeJsonSerializerSettings": false,
+      "exposeJsonSerializerSettings": true,
       "clientClassAccessModifier": "public",
       "typeAccessModifier": "public",
       "propertySetterAccessModifier": "",
@@ -152,12 +152,8 @@
       "jsonPolymorphicSerializationStyle": "SystemTextJson",
       "generateDefaultValues": true,
       "generateDataAnnotations": true,
-      "excludedTypeNames": [
-        "ApiClient.Generator.Sample.Contracts"
-      ],
-      "excludedParameterNames": [
-        "ApiClient.Generator.Sample.Contracts"
-      ],
+      "excludedTypeNames": [],
+      "excludedParameterNames": [],
       "handleReferences": false,
       "generateImmutableArrayProperties": false,
       "generateImmutableDictionaryProperties": false,
