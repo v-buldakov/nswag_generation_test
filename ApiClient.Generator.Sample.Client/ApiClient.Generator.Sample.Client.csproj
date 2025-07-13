@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiClient.Generator.Sample.Api\ApiClient.Generator.Sample.Api.csproj">
+      <ExcludeAssets>True</ExcludeAssets>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <Private>False</Private>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj" />
   </ItemGroup>
     
@@ -23,11 +29,14 @@
       </None>
     </ItemGroup>
 
-    <Target Name="NSwag" BeforeTargets="AfterBuild" Condition="'$(GenerateApiClient)'!='False' ">
+    <Target Name="NSwag" BeforeTargets="BeforeBuild">
         <PropertyGroup>
             <NSwagPath>content/nswag.json</NSwagPath>
         </PropertyGroup>
         <Exec Command="$(NSwagExe_Net80) run $(NSwagPath) /variables:Configuration=$(Configuration)" />
+        <Message Importance="high" Text="Artifact paths set to $(ArtifactsPath)" />
     </Target>
+    
+    
     
 </Project>
