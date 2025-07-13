@@ -2,8 +2,18 @@
   "runtime": "Net80",
   "defaultVariables": null,
   "documentGenerator": {
-    "fromDocument": {
-      "url": "http://redocly.github.io/redoc/openapi.yaml",
+    "aspNetCoreToOpenApi": {
+      "project": "../../ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj",
+      "documentName": "v1",
+      "msBuildProjectExtensionsPath": null,
+      "configuration": null,
+      "runtime": null,
+      "targetFramework": null,
+      "noBuild": true,
+      "msBuildOutputPath": "../builds/bin/ApiClient.Generator.Sample.Api/release",
+      "verbose": true,
+      "workingDirectory": null,
+      "aspNetCoreEnvironment": null,
       "output": null,
       "newLineBehavior": "Auto"
     }
@@ -70,8 +80,8 @@
       "newLineBehavior": "Auto"
     },
     "openApiToCSharpClient": {
-      "clientBaseClass": null,
-      "configurationClass": null,
+      "clientBaseClass": "ApiHttpBaseClient",
+      "configurationClass": "ApiHttpConfiguration",
       "generateClientClasses": true,
       "suppressClientClassesOutput": false,
       "generateClientInterfaces": true,
@@ -94,10 +104,10 @@
       "clientClassAccessModifier": "public",
       "typeAccessModifier": "public",
       "propertySetterAccessModifier": "",
-      "generateNativeRecords": false,
-      "generateContractsOutput": false,
+      "generateNativeRecords": true,
+      "generateContractsOutput": true,
       "contractsNamespace": "ApiClient.Generator.Sample.Client.Clients",
-      "contractsOutputFilePath": null,
+      "contractsOutputFilePath": "../Clients/IClient.cs",
       "parameterDateTimeFormat": "s",
       "parameterDateFormat": "yyyy-MM-dd",
       "generateUpdateJsonSerializerSettingsMethod": false,
@@ -106,8 +116,12 @@
       "queryNullValue": "",
       "className": "{controller}Client",
       "operationGenerationMode": "MultipleClientsFromOperationId",
-      "additionalNamespaceUsages": [],
-      "additionalContractNamespaceUsages": [],
+      "additionalNamespaceUsages": [
+        "ApiClient.Generator.Sample.Contracts"
+      ],
+      "additionalContractNamespaceUsages": [
+        "ApiClient.Generator.Sample.Contracts"
+      ],
       "generateOptionalParameters": false,
       "generateJsonMethods": false,
       "enforceFlagEnums": false,
@@ -135,26 +149,26 @@
       "dictionaryBaseType": "System.Collections.Generic.Dictionary",
       "classStyle": "Poco",
       "jsonLibrary": "SystemTextJson",
-      "jsonPolymorphicSerializationStyle": "NJsonSchema",
+      "jsonPolymorphicSerializationStyle": "SystemTextJson",
       "generateDefaultValues": true,
       "generateDataAnnotations": true,
-      "excludedTypeNames": [ "ApiClient.Generator.Sample.Contracts" ],
-      "excludedParameterNames": [ "ApiClient.Generator.Sample.Contracts" ],
+      "excludedTypeNames": [],
+      "excludedParameterNames": [],
       "handleReferences": false,
       "generateImmutableArrayProperties": false,
       "generateImmutableDictionaryProperties": false,
       "jsonSerializerSettingsTransformationMethod": null,
-      "inlineNamedArrays": false,
-      "inlineNamedDictionaries": false,
+      "inlineNamedArrays": true,
+      "inlineNamedDictionaries": true,
       "inlineNamedTuples": true,
-      "inlineNamedAny": false,
+      "inlineNamedAny": true,
       "generateDtoTypes": false,
       "generateOptionalPropertiesAsNullable": false,
       "generateNullableReferenceTypes": false,
       "templateDirectory": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "Client.cs",
+      "output": "../Clients/Client.cs",
       "newLineBehavior": "Auto"
     }
   }

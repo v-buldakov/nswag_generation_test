@@ -1,36 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj" />
-  </ItemGroup>
-    
+    <ItemGroup>
+        <ProjectReference Include="..\ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj" />
+    </ItemGroup>
+
     <ItemGroup>
         <PackageReference Include="NSwag.MSBuild" Version="14.4.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
-    
-    <ItemGroup>
-      <None Update="content\nswag.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
 
-    <Target Name="NSwag" BeforeTargets="BeforeBuild">
-        <PropertyGroup>
-            <NSwagPath>content/nswag.json</NSwagPath>
-        </PropertyGroup>
-        <Exec Command="$(NSwagExe_Net80) run $(NSwagPath) /variables:Configuration=$(Configuration)" />
-        <Message Importance="high" Text="Artifact paths set to $(ArtifactsPath)" />
-    </Target>
+    <ItemGroup>
+        <None Update="content\nswag.release.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="content\nswag.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
     
-    
-    
+    <Import Project="build/ApiClient.Generator.Sample.Client.Build.targets" />
 </Project>

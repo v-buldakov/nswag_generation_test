@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient.Generator", "ApiClient.Generator\ApiClient.Generator.csproj", "{05930F31-4D3A-6396-588D-F9D24F02CD28}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient.Generator.Sample.Api", "ApiClient.Generator.Sample.Api\ApiClient.Generator.Sample.Api.csproj", "{AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClient.Generator.Sample.Contracts", "ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj", "{EBED3DF1-3126-4CC6-A2F0-B021C00820FC}"
@@ -27,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{05930F31-4D3A-6396-588D-F9D24F02CD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05930F31-4D3A-6396-588D-F9D24F02CD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05930F31-4D3A-6396-588D-F9D24F02CD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05930F31-4D3A-6396-588D-F9D24F02CD28}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF9B946B-6B16-F3AB-ACAA-9E4AF51195E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
