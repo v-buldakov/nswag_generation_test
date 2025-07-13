@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiClient.Generator.Sample.Api\ApiClient.Generator.Sample.Api.csproj">
-      <ExcludeAssets>True</ExcludeAssets>
-      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
-      <Private>False</Private>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\ApiClient.Generator.Sample.Contracts\ApiClient.Generator.Sample.Contracts.csproj" />
   </ItemGroup>
     
