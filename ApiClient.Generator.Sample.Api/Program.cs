@@ -1,5 +1,3 @@
-using ApiClient.Generator.Sample.Contracts;
-
 internal class Program
 {
     private static void Main(string[] args)
