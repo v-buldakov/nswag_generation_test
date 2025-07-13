@@ -17,6 +17,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: create dir for api project
       run: mkdir ./apiBinary
+      # обойтись без сборки Api приложения не удастся, поскольку контракты генерируются относительно рано в пайплайне MsBuild
     - name: build api project in debug mode
       run: dotnet build ./ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj --configuration Release --artifacts-path ./apiBinary
     - name: create build dir
