@@ -10,7 +10,7 @@
       "runtime": null,
       "targetFramework": null,
       "noBuild": true,
-      "msBuildOutputPath": "../builds/bin/ApiClient.Generator.Sample.Api/release",
+      "msBuildOutputPath": "../apiBinary/bin/ApiClient.Generator.Sample.Api/release/",
       "verbose": true,
       "workingDirectory": null,
       "aspNetCoreEnvironment": null,
