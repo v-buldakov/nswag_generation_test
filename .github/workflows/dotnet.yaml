@@ -15,7 +15,13 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+    - name: create dir for api project
+      run: mkdir ./apiBinary
+    - name: build api project in debug mode
+      run: dotnet build ./ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj --configuration Release --artifacts-path ./apiBinary
     - name: create build dir
       run: mkdir ./builds
     - name: build
       run: dotnet build --configuration Release --artifacts-path ./builds
+    - name: delete dir for api project
+      run: rm -r ./apiBinary
