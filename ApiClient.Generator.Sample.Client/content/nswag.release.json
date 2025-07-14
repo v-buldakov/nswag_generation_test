@@ -4,8 +4,8 @@
   "documentGenerator": {
     "aspNetCoreToOpenApi": {
       "project": "../../ApiClient.Generator.Sample.Api/ApiClient.Generator.Sample.Api.csproj",
-      "documentName": "v1",
-      "msBuildProjectExtensionsPath": null,
+      "documentName": "vall",
+      "msBuildProjectExtensionsPath": "../apiBinary/obj/ApiClient.Generator.Sample.Api/release/",
       "configuration": null,
       "runtime": null,
       "targetFramework": null,
