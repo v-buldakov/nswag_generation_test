@@ -29,24 +29,46 @@ namespace ApiClient.Generator.Sample.Client.Clients
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial interface IValuesClient
     {
+        /// <summary>
+        /// get random value
+        /// </summary>
+        /// <returns>int</returns>
         /// <exception cref="ValuesApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<int> GetValueAsync();
+        System.Threading.Tasks.Task<int> GetValueAsync(string api_version);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>
+        /// get random value
+        /// </summary>
+        /// <returns>int</returns>
         /// <exception cref="ValuesApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<int> GetValueAsync(System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<int> GetValueAsync(string api_version, System.Threading.CancellationToken cancellationToken);
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial interface IWeatherClient
+    public partial interface IWeatherForecastClient
     {
-        /// <exception cref="WeatherApiException">A server side error occurred.</exception>
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetForecastsAsync();
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <exception cref="WeatherApiException">A server side error occurred.</exception>
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetForecastsAsync(System.Threading.CancellationToken cancellationToken);
+
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetForecasts2Async();
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetForecasts2Async(System.Threading.CancellationToken cancellationToken);
+
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecastV2>> GenericResponseAsync();
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecastV2>> GenericResponseAsync(System.Threading.CancellationToken cancellationToken);
 
     }
 
@@ -90,7 +112,7 @@ namespace ApiClient.Generator.Sample.Client.Clients
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class WeatherApiException : System.Exception
+    public partial class WeatherForecastApiException : System.Exception
     {
         public int StatusCode { get; private set; }
 
@@ -98,7 +120,7 @@ namespace ApiClient.Generator.Sample.Client.Clients
 
         public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
 
-        public WeatherApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
+        public WeatherForecastApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
             : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null) ? "(null)" : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
         {
             StatusCode = statusCode;
@@ -113,11 +135,11 @@ namespace ApiClient.Generator.Sample.Client.Clients
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class WeatherApiException<TResult> : WeatherApiException
+    public partial class WeatherForecastApiException<TResult> : WeatherForecastApiException
     {
         public TResult Result { get; private set; }
 
-        public WeatherApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException)
+        public WeatherForecastApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException)
             : base(message, statusCode, response, headers, innerException)
         {
             Result = result;

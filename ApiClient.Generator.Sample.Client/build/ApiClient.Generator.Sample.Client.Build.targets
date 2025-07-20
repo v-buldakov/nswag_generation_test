@@ -1,0 +1,9 @@
+<Project>
+    <Target Name="NSwag" BeforeTargets="BeforeBuild">
+        <PropertyGroup Condition=" $(NSwagPath) == '' ">
+            <NSwagPath>content/nswag.json</NSwagPath>
+        </PropertyGroup>
+        <Exec Command="$(NSwagExe_Net80) run $(NSwagPath) /variables:Configuration=$(Configuration)" />
+        <Message Importance="high" Text="Artifact paths set to $(ArtifactsPath)" />
+    </Target>
+</Project>

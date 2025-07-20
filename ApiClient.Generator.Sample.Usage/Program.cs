@@ -15,7 +15,7 @@ builder.Services.AddScoped(x => new ApiHttpConfiguration
         PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
     }
 });
-builder.Services.AddHttpClient<IWeatherClient, WeatherClient>(x =>
+builder.Services.AddHttpClient<IWeatherForecastClient, WeatherForecastClient>(x =>
 {
     x.BaseAddress = new Uri("https://localhost:7072");
 });

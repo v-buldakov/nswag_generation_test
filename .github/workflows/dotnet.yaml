@@ -23,6 +23,6 @@ jobs:
     - name: create build dir
       run: mkdir ./builds
     - name: build
-      run: dotnet build --configuration Release --artifacts-path ./builds
+      run: dotnet build --configuration Release --artifacts-path ./builds -p:NSwagPath=content/nswag.release.json
     - name: delete dir for api project
       run: rm -r ./apiBinary
