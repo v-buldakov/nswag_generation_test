@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApiClient.Generator.Sample.Api\ApiClient.Generator.Sample.Api.csproj" />
+  </ItemGroup>
+
 </Project>
