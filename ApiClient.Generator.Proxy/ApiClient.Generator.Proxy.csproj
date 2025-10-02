@@ -1,13 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsPackable>true</IsPackable>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>apiclient-generator-proxy</ToolCommandName>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ApiClient.Generator.Sample.Api\ApiClient.Generator.Sample.Api.csproj" />
-  </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="NSwag.AspNetCore" Version="14.4.0" />
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.24" />
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta6.25358.103" />
+        <PackageReference Include="System.CommandLine.NamingConventionBinder" Version="2.0.0-beta5.25306.1" />
+    </ItemGroup>
 </Project>
